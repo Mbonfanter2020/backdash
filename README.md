@@ -1,7 +1,7 @@
 <h2>Setup</h2>
 Instalar Wamp server, Git y Composer
-</br><b>Wamp:</b> https://sourceforge.net/projects/wampserver/ </br>
-<b>Composer:</b> https://getcomposer.org/download/  (PHP 8.3)</br>
+</br><b>Wamp:</b> https://sourceforge.net/projects/wampserver/ (PHP 8.3) </br>
+<b>Composer:</b> https://getcomposer.org/download/ (PHP 8.3)</br>
 <b>Git: </b> https://git-scm.com/downloads
 <hr>
 Ejecutar Wamp y ir a la carpeta www, ahí, usando la consola de comandos para clonar el repositorio
