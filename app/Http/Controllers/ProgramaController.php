@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\Programa;
 use Illuminate\Http\Request;
 
@@ -12,15 +13,13 @@ class ProgramaController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        
+        try {
+            $programa = Programa::all();
+            return response()->json(['estado' => 'ok', 'data' => $programa]);
+        } catch (\Throwable $th) {
+            return response()->json(['estado' => 'error']);
+        }
     }
 
     /**
@@ -28,8 +27,19 @@ class ProgramaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $programa = new Programa();
+            $programa->id = $request->id;
+            $programa->nombre = $request->nombre;
+            if($programa){
+                $programa->save();
+                return response()->json(['estado' => 'ok']);
+            }
+        } catch (Exception $e) {
+            return response()->json(['estado' => 'error', 'msg' => $e->getMessage()]);
+        }
     }
+    
 
     /**
      * Display the specified resource.
