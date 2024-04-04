@@ -12,4 +12,7 @@ Route::put('/estudiantes', [EstudianteController::class, 'store']);
 Route::delete('/estudiantes', [EstudianteController::class, 'store']);
 
 Route::get('/programas', [ProgramaController::class, 'index']);
+Route::get('/programas/{codigo}', [ProgramaController::class, 'show']);
 Route::post('/programas', [ProgramaController::class, 'store']);
+Route::put('/programas/{codigo}', [ProgramaController::class, 'update']);
+Route::delete('/programas/{codigo}', [ProgramaController::class, 'destroy']);
