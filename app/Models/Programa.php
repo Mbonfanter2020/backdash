@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Estudiante;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Programa extends Model
 {
@@ -16,4 +17,10 @@ class Programa extends Model
     public function estudiantes() {
         return $this->hasMany(Estudiante::class);
     }
+
+    public function universidad(): BelongsTo {
+        return $this->belongsTo(Universidad::class);
+    }
+
+    
 }
