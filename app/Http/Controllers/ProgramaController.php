@@ -54,7 +54,7 @@ class ProgramaController extends Controller
                 $programa->save();
                 return response()->json(['estado' => 'ok']);
             }else{
-                return response()->json(['estado' => 'Error']);
+                return response()->json(['estado' => 'Error', 'mensaje' => 'Universidad no Existe']);
             }
         } catch (Exception $e) {
             return response()->json(['estado' => 'error', 'msg' => $e->getMessage()]);
